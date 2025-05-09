@@ -34,24 +34,24 @@
   </template>
   
   <script setup>
-  import { computed, watch } from 'vue'
-  import { useRoute, useRouter } from 'vue-router'
-//   import { useBoardStore } from '@/stores/boardStore' // Adjust path as needed
-  import { toRef } from 'vue'
-  
   const props = defineProps({
     name: { type: String, required: true },
     isCreateNew: { type: Boolean, default: false },
     id: { type: [String, Number], required: true },
-    onClick: { type: Function }
+    onClick: { type: Function },
+    // isActive: { type: Boolean, default: false }
+  })
+
+  const router = useRouter();   
+
+  const isActive = computed(() => {
+    return router.currentRoute.value.path === `/board/${props.id}`
   })
   
 //   const route = useRoute()
 //   const router = useRouter()
 //   const boardStore = useBoardStore()
-  
-  const isActive = false
-  
+    
 //   watch(
 //     () => [props.id, isActive.value, props.name],
 //     ([id, active, name]) => {

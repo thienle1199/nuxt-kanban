@@ -24,4 +24,7 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
+  supabase: {
+    redirect: false,
+  }
 })
