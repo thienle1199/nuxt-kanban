@@ -23,7 +23,7 @@ const isSidebarVisible = ref(true);
         ALL BOARDS ({{ data?.length }})
       </h2>
       <div v-for="board in data" :key="board.id">
-        <BoardItem :name="board.name" :id="board.id" />
+        <BoardMenuItem :name="board.name" :id="board.id" />
       </div>
     </aside>
 </template>
